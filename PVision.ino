@@ -13,6 +13,7 @@ byte result;
 void setup()
 {
   Serial.begin(9600);
+  Serial.print("PVision");
   ircam.init();
 }
 
@@ -20,6 +21,8 @@ void loop()
 {
    
   result = ircam.read();
+  
+  Serial.print(result);
   
   if (result & BLOB1)
   {
